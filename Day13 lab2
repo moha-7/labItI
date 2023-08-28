@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AAST Student Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .ccit {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>AAST Students Table</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        <?php
+        $students = array(
+            array("mohamed osama", "mo297591@example.com", "CCIT"),
+            array("retaj", "retaj@example.com", "AAST"),
+            array("mcqueen", "mcqueen@example.com", "CCIT"),
+            array("Ali", "Ali@example.com", "AAST"),
+            
+        );
+
+        foreach ($students as $student) {
+            $name = $student[0];
+            $email = $student[1];
+            $status = $student[2];
+            $statusClass = ($status === "CCIT") ? "ccit" : "";
+
+            echo "<tr>";
+            echo "<td>$name</td>";
+            echo "<td>$email</td>";
+            echo "<td class=\"$statusClass\">$status</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>
